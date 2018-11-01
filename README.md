@@ -1,4 +1,4 @@
-# nodejsmc-assignment
+# nodejsmc-assignment-1
 Nodejs Master Class Assignment #1
 
 Homework Assignment #1
