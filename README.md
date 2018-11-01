@@ -12,4 +12,7 @@ Create a simple "Hello World" API. Meaning:
 This message can be anything you want.
 
 
-- The port is set up by config.js (3000)
+As for the code, 
+The structure is a main function as seen on the lectures, is the callback for "http.CreateServer", did not include the StringDecoder since no parsing of body is required, the port and environment name goes in config.js.
+
+*/
