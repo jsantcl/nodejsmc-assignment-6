@@ -1,5 +1,5 @@
-// simple setup
-// configuration object
+// simple setup for one env
+// environment object
 const environments = {};
 
 

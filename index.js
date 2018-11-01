@@ -1,6 +1,8 @@
 const http = require("http");
 const url = require("url");
 
+const config = require("./config");
+
 
 
 // Create the server and pass to mainFunction
@@ -44,8 +46,8 @@ const mainFunction = function( req, res) {
 
 
 // Listen on port 3000
-server.listen( 3000, "localhost", ()=>{
-    console.log("Server listening on port 3000");
+server.listen( config.port, "localhost", ()=>{
+    console.log(`Server listening on port ${config.port} environment ${config.envName.toUpperCase()}`);
 });
 
 
