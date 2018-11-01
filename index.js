@@ -45,7 +45,7 @@ const mainFunction = function( req, res) {
 };
 
 
-// Listen on port 3000
+// Listen on port set by config
 server.listen( config.port, "localhost", ()=>{
     console.log(`Server listening on port ${config.port} environment ${config.envName.toUpperCase()}`);
 });
