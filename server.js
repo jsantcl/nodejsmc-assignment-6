@@ -67,7 +67,7 @@ server.router.set("hello", server.handler.hello);
 //Init server
 server.init = () => {
     // Listen on port set by config
-    server.http.listen( config.port, "192.168.0.13", ()=>{
+    server.http.listen( config.port, "localhost", ()=>{
     console.log(`Server listening on port ${config.port} environment ${config.envName.toUpperCase()}`);
 });
 }
