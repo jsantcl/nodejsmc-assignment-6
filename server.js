@@ -4,7 +4,6 @@ const config = require("./config.js");
 //dependencies
 const http = require("http");
 const url = require("url");
-const os = require('os');
 
 
 //server container object
@@ -41,11 +40,7 @@ server.mainFunction = ( req, res) => {
             //set the status code
             res.writeHead( statusCode);
             res.end( payloadString);
-
-            // log the requested route and the response
-            console.log("Request received on path: ",trimmedPath);
-            console.log("Response : ", statusCode, payloadString);
-        });
+        }, trimmedPath);
 };
 
 
@@ -58,8 +53,11 @@ server.handler.notFound = ( callback)=> {
 }
 
 // Reply with welcome message on route /hello
-server.handler.hello = ( callback)=> {
-    callback( 200,  {"message":"Welcome to Homework Assignment #6, Nodejs Master Class!! This is cpu no."})
+server.handler.hello = ( callback, trimmedPath)=> {
+    //Send message to main thread
+    process.send({ msg: `Message from child thread ${process.pid} on path ${trimmedPath}` });
+    //response
+    callback( 200,  {"message":"Welcome to Homework Assignment #6, Nodejs Master Class!!"});
 }
 
 // I'm using a map for the actual router
@@ -69,7 +67,7 @@ server.router.set("hello", server.handler.hello);
 //Init server
 server.init = () => {
     // Listen on port set by config
-    server.http.listen( config.port, "localhost", ()=>{
+    server.http.listen( config.port, "192.168.0.13", ()=>{
     console.log(`Server listening on port ${config.port} environment ${config.envName.toUpperCase()}`);
 });
 }
