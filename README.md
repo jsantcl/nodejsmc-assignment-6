@@ -1,6 +1,18 @@
 # nodejsmc-assignment-6
 Nodejs Master Class Assignment #6
 
+
+How to test!!
+
+cd into the "nodejsmc-assignment-6" folder and then run 
+
+node index-cluster.js
+
+Then send a GET request to http://localhost:3000/hello
+
+See the messages on the console for information about the process which is replying to the request
+
+
 Homework Assignment #6
 The Assignment:
 
@@ -12,3 +24,5 @@ When a request comes in, it should respond to it just as normal (only once).
 Video Component:
 
 Make a screencast showing off the code you wrote for this assignment. Walk us through your file(s), line by line, explaining what the code means and why you wrote it the way you did. Then, start your application from the command-line and interact with it (using an HTTP client) to show off the required functionality. If you're comfortable doing so, please narrate as you go and explain what you're showing us.
+
+
